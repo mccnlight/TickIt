@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Psoppins%26display=swap" rel="stylesheet">
+        <link href="https://otkrit-ka.ru/uploads/posts/2022-10/otkrit-ka.ru_krasivye-kartinki-bukvy-t-30.jpg" rel="icon">
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        font-family: Montserrat, sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+    }
+    .container {
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+    .header-area {
+        background-color: #2b2d30;
+        background-position: center center;
+        background-size: cover;
+    }
+
+
+    .navbar-area {
+        border-bottom: 1px solid #000;
+    }
+    .site-navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    a.site-logo {
+        font-size: 26px;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: #fff;
+        text-decoration: none;
+    }
+    .site-navbar ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+    }
+    .site-navbar ul li a {
+        color: #fff;
+        padding: 20px;
+        display: block;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+    .site-navbar ul li a:hover {
+        background: rgba(255,255,255,.1);
+    }
+
+    .nav-toggler {
+        border: 3px solid #fff;
+        padding: 5px;
+        background-color: transparent;
+        cursor: pointer;
+        height: 39px;
+        display: none;
+
+    }
+    .nav-toggler span,
+    .nav-toggler span:before,
+    .nav-toggler span:after {
+        width: 28px;
+        height: 3px;
+        background-color: #fff;
+        display: block;
+        transition: .3s;
+    }
+    .nav-toggler span:before {
+        content: '';
+        transform: translateY(-9px);
+    }
+    .nav-toggler span:after {
+        content: '';
+        transform: translateY(6px);
+    }
+    .nav-toggler.toggler-open span {
+        background-color: transparent;
+    }
+    .nav-toggler.toggler-open span:before {
+        transform: translateY(0px) rotate(45deg);
+    }
+    .nav-toggler.toggler-open span:after {
+        transform: translateY(-3px) rotate(-45deg);
+    }
+
+    .intro-area h2 {
+        font-size: 50px;
+        font-weight: 300;
+        line-height: 50px;
+        margin-bottom: 25px;
+    }
+    .intro-area p {
+        font-size: 18px;
+    }
+    /* intro-area css end */
+
+
+    /* mobile breakpoint start */
+    @media screen and (max-width: 767px) {
+        .container {
+            max-width: 720px;
+        }
+        /* navbar css for mobile start */
+        .nav-toggler{
+            display: block;
+        }
+        .site-navbar {
+            min-height: 60px;
+        }
+        .site-navbar ul {
+            position: absolute;
+            width: 100%;
+            height: calc(100vh - 60px);
+            left: 0;
+            top: 60px;
+            flex-direction: column;
+            align-items: center;
+            border-top: 1px solid #444;
+            background-color: rgba(0,0,0,.75);
+            max-height: 0;
+            overflow: hidden;
+            transition: .3s;
+        }
+        .site-navbar ul li {
+            width: 100%;
+            text-align: center;
+        }
+        .site-navbar ul li a {
+            padding: 25px;
+        }
+        .site-navbar ul li a:hover {
+            background-color: rgba(255,255,255,.1);
+        }
+        .site-navbar ul.open {
+            max-height: 100vh;
+            overflow: visible;
+        }
+        .intro-area h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        /* navbar css for mobile end */
+    }
+
+    .toggle {
+        cursor: pointer;
+        color: white;
+        display: inline-block;
+    }
+
+    .toggle-switch {
+        display: inline-block;
+        background: #ccc;
+        border-radius: 16px;
+        width: 58px;
+        height: 32px;
+        position: relative;
+        vertical-align: middle;
+        transition: background 0.25s;
+    }
+
+    .toggle-switch:before,
+    .toggle-switch:after {
+        content: "";
+    }
+
+    .toggle-switch:before {
+        display: block;
+        background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+        border-radius: 50%;
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        transition: left 0.25s;
+    }
+
+    .toggle:hover .toggle-switch:before {
+        background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+    }
+
+    .toggle-checkbox:checked+.toggle-switch {
+        background: #56c080;
+    }
+
+    .toggle-checkbox:checked+.toggle-switch:before {
+        left: 30px;
+    }
+
+    .toggle-checkbox {
+        position: absolute;
+        visibility: hidden;
+    }
+
+    .toggle-label {
+        margin-left: 5px;
+        position: relative;
+        top: 2px;
+    }
+
+</style>
+
+<body>
+<header class="header-area">
+    <!-- site-navbar start -->
+    <div class="navbar-area">
+        <div class="container">
+            <nav class="site-navbar">
+                <!-- site logo -->
+                <a href="#home" class="site-logo">TickIt</a>
+
+                <!-- site menu/nav -->
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="poster.html">Poster</a></li>
+                    <li><a href="events.html">Upcoming events</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+
+                <!-- nav-toggler for mobile version only -->
+                <button class="nav-toggler">
+                    <span></span>
+                </button>
+                <label class="toggle">
+                    <input class="toggle-checkbox" type="checkbox" id="musicSwitcher">
+                    <div class="toggle-switch"></div>
+                    <span class="toggle-label">Music</span>
+                </label>
+            </nav>
+        </div>
+
+    </div><!-- navbar-area end -->
+
+
+
+    <audio src="../static/song/Post Malone, Swae Lee - Sunflower.mp3" id="music"></audio>
+</header>
+<script>
+
+    const navToggler = document.querySelector('.nav-toggler');
+    const navMenu = document.querySelector('.site-navbar ul');
+    const navLinks = document.querySelectorAll('.site-navbar a');
+
+    allEventListners();
+
+    function allEventListners() {
+        navToggler.addEventListener('click', togglerClick);
+        navLinks.forEach( elem => elem.addEventListener('click', navLinkClick));
+    }
+
+    function togglerClick() {
+        navToggler.classList.toggle('toggler-open');
+        navMenu.classList.toggle('open');
+    }
+
+    function navLinkClick() {
+        if(navMenu.classList.contains('open')) {
+            navToggler.click();
+        }
+    }
+
+    const music = document.getElementById('music')
+    const musicSwitcher = document.getElementById('musicSwitcher')
+
+    musicSwitcher.addEventListener('click' , () => {
+        musicSwitcher.setAttribute('checked' , `${!musicSwitcher.checked}`)
+        if (musicSwitcher.checked){
+            music.play()
+        }else music.pause()
+    } , false)
+
+</script>
+</body>
+</html>

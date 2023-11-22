@@ -1,0 +1,40 @@
+.bg-footer {
+        background-color: #000000;
+        padding: 50px 0 30px;
+    }
+
+    .footer-heading {
+        letter-spacing: 2px;
+    }
+
+    .footer-link a {
+        color: white;
+        line-height: 40px;
+        font-size: 14px;
+        transition: all 0.5s;
+    }
+
+    .footer-link a:hover {
+        color: white;
+    }
+
+    .contact-info {
+        color: white;
+        font-size: 14px;
+    }
+
+    .footer-heading {
+        position: relative;
+        padding-bottom: 12px;
+    }
+
+    .footer-heading:after {
+        content: '';
+        width: 25px;
+        border-bottom: 1px solid #FFF;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        display: block;
+        border-bottom: 1px solid #1bbc9b;
+    }
